@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+          <hibernate-mapping>
+          <class name="com.project.module.EmployeeTest" table="teststu">
+          <id name="id">
+          <generator class="assigned"></generator>
+          </id>
+          
+          <property name="name"></property>
+          <property name="dept"></property>
+          
+          </class>
+          <sql-query name="callEmpProcedure">
+	<return alias="emp" class="com.project.module.EmployeeTest"/>
+	<![CDATA[CALL emp1(:con)]]>
+    </sql-query>
+          </hibernate-mapping>
